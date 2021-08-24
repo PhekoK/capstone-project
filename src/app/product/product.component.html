@@ -16,7 +16,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Product Catalog<sup>:)</sup></div>
+                <div class="sidebar-brand-text mx-3">KAR-MART<sup> 2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -25,7 +25,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" routerLink="/product">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-shopping-cart -alt"></i>
                     <span>Product Categories</span></a>
             </li>
 
@@ -41,7 +41,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo" >
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-fw fa-chart-line"></i>
                     <span>Overview</span>
                 </a>
                 <!-- <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -102,13 +102,19 @@
 
 
                     <form action="">
-                        <i class="nav-item bi-cart-fill me-1"></i>
-                    <a class="btn btn-outline-dark">Cart
+                        
+                    <a class="btn btn-outline-dark" routerLink="/shopping-cart"> <i class="fas fa-shopping-basket "></i>&nbsp;Cart
+
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">{{totalItem}}</span>
+                    </a> &nbsp;
+                    </form> &nbsp;
+                    <form action="">
+                         <i class="nav-item me-1 bg-dark"></i>
+                        &nbsp; <a class="btn btn-outline-dark"> <i class="fas fa-heart bg-red"></i> &nbsp;Wish List
 
                         <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                     </a>
                     </form>
-                    
 
                     
 
@@ -127,7 +133,7 @@
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
+                                            placeholder="Search products" aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
@@ -189,15 +195,17 @@
                     <!-- container item -  -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                         <ul class="navbar-nav text-center">
-                            <li><a href="">Pets and Animals</a></li>
+                            <li><a href=""><i class="fas fa-shopping-bag"></i> &nbsp; All Products</a></li>
                             <div class="topbar-divider d-none d-sm-block"></div>
-                            <li><a href="">Fresh, Frozen , Dairy</a></li>
+                            <li><a href=""><i class="fas fa-paw"></i> &nbsp; Pets and Animals</a></li>
                             <div class="topbar-divider d-none d-sm-block"></div>
-                            <li><a href="">Groceries, Cupboard</a></li>
+                            <li><a href=""><i class="fas fa-carrot"></i> &nbsp; Fresh, Frozen , Dairy</a></li>
                             <div class="topbar-divider d-none d-sm-block"></div>
-                            <li><a href="">Combos, Bulk Buying and Specials</a></li>
+                            <li><a href=""><i class="fas fa-shopping-basket"></i> &nbsp; Groceries, Cupboard</a></li>
                             <div class="topbar-divider d-none d-sm-block"></div>
-                            <li><a href="">Toiletries and Household</a></li>
+                            <li><a href=""><i class="fas fa-luggage-cart"></i> &nbsp;Combos, Bulk Buying and Specials</a></li>
+                            <div class="topbar-divider d-none d-sm-block"></div>
+                            <li><a href=""><i class="fas fa-toilet-paper"></i> &nbsp;Toiletries and Household</a></li>
                             <div class="topbar-divider d-none d-sm-block"></div>
                         </ul>
                     </nav>
@@ -215,8 +223,8 @@
                                 <div class="col mb-5" *ngFor="let product of products">
                                     <div class="card h-100">
                                         <!-- Product image-->
-                                        <img class="card-img-top" src="{{product.image}}" alt="..." />
-
+                                        
+                                        <a href=""><img class="card-img-top" src="{{product.image}}" alt="..." /></a>
                                         <hr class="sidebar-divider">
 
                                         <!-- Product details-->
@@ -234,8 +242,8 @@
                                         <!-- Product actions-->
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                             <div class="text-center">
-                                                <a class="btn btn-outline-dark mt-auto icon-shopping-cart" >  Add to Cart</a>|
-                                                <span><a href=""> <i class="icon-wishing-list"></i> wishlist</a></span>
+                                                <a class="btn btn-outline-dark mt-auto icon-shopping-cart"  (click)="addtoCart(product)" > <i class="fas fa-shopping-basket"></i> </a>&nbsp;
+                                                <span><a class="btn btn-danger"> <i class="fas fa-heart"></i> </a></span>
                                             </div>
                                         </div>
                                     </div>

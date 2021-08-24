@@ -23,6 +23,7 @@ const routes: Routes = [
      ]
   },
   { path: 'product', component: ProductComponent },
+  { path: 'shopping-cart/:id', component: ShoppingCartComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
