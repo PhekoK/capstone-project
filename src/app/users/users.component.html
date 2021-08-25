@@ -42,8 +42,8 @@
                        <td>{{user.email}}</td>
                        <td>{{user.password}}</td>
                        <td>
-                        <a class="btn btn-outline-info update">
-                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                        <a class="btn btn-outline-info update" [routerLink]="['/update-user', user._id]">
+                            <span class="text-gradient"><i class="fas fa-pencil-alt" ></i></span>
                         </a> &nbsp;
                         <button class="btn btn-outline-danger delete" (click)="deleteUser()" >
                             <span class="text-gradient"><i class="fas fa-times"></i></span>

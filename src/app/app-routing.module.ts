@@ -10,6 +10,7 @@ import { ProductComponent } from './product/product.component';
 import { RegisterComponent } from './register/register.component';
 import { ReportsComponent } from './reports/reports.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'add-user', component: AddUserComponent },
+  { path: 'update-user/:id', component: UpdateUserComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 
