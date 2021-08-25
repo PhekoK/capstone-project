@@ -6,6 +6,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductAddComponent } from './product-add/product-add.component';
+import { ProductUpdateComponent } from './product-update/product-update.component';
 import { ProductComponent } from './product/product.component';
 import { RegisterComponent } from './register/register.component';
 import { ReportsComponent } from './reports/reports.component';
@@ -31,6 +33,8 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'add-user', component: AddUserComponent },
   { path: 'update-user/:id', component: UpdateUserComponent },
+  { path: 'product-add', component: ProductAddComponent },
+  { path: 'product-update/:id', component: ProductUpdateComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 

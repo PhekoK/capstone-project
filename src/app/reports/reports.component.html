@@ -12,7 +12,7 @@
 <main id="main">
     <div class="container">
         <div class="box-nav d-flex justify-between">
-            <a class="border-shadow btn btn-outline-info">
+            <a class="border-shadow btn btn-outline-info" routerLink="/product-add">
                 <span class="text-gradient">Add New Stock <i class="fas fa-carrot"></i> </span>
             </a>
         </div>
@@ -50,7 +50,7 @@
                        <td>{{item.category}}</td>
                        <td>{{item.SKU}}</td>
                        <td>
-                        <a class="btn btn-outline-info update">
+                        <a class="btn btn-outline-info update" [routerLink]="['/product-update', product._id]" >
                             <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
                         </a> 
                         <a class="btn btn-outline-danger delete">

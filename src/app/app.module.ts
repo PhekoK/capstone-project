@@ -19,6 +19,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { ProductAddComponent } from './product-add/product-add.component';
+import { ProductUpdateComponent } from './product-update/product-update.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     CheckoutComponent,
     AddUserComponent,
     InvoiceComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    ProductAddComponent,
+    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,

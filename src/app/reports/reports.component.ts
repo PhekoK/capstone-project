@@ -5,12 +5,14 @@ import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
-  styleUrls: ['./reports.component.css']
+  styleUrls: ['./reports.component.css'],
+  providers: [ProductService]
 })
 export class ReportsComponent implements OnInit {
 
-
   items: Product[] = [];
+
+  product: Product = new Product();
 
   constructor( private _productService: ProductService ) { }
 
