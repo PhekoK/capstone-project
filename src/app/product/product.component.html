@@ -34,33 +34,26 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                ...
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo" >
+                <a class="nav-link collapsed" data-bs-toggle="dropdown" role="button" data-target="#collapseTwo"
+                aria-haspopup="true" aria-expanded="false" aria-controls="collapseTwo" >
                     <i class="fas fa-fw fa-chart-line"></i>
-                    <span>Overview</span>
+                    <span>View Categories</span>
                 </a>
-                <!-- <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"  data-bs-toggle="dropdown" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
                          <a class="collapse-item" href="buttons.html">Buttons</a>
                         <a class="collapse-item" href="cards.html">Cards</a> 
                     </div>
-                </div> -->
+                </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities"  >
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Manage Users</span>
-                </a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -128,28 +121,7 @@
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search products" aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
                         </li>
-
-                        <!-- Nav Item - Alerts -->
-                        
-
-
-                        <!-- Nav Item - Messages -->
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -173,7 +145,7 @@
                                     Register
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item"  data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item"  data-toggle="modal" data-target="#logoutModal" (click)="logout()">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

@@ -11,6 +11,7 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
 import { ProductComponent } from './product/product.component';
 import { RegisterComponent } from './register/register.component';
 import { ReportsComponent } from './reports/reports.component';
+import { AuthService } from './services/auth.service';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UsersComponent } from './users/users.component';
@@ -30,7 +31,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'shopping-cart/:id', component: ShoppingCartComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout', component: CheckoutComponent , canActivate: [AuthService] },
   { path: 'add-user', component: AddUserComponent },
   { path: 'update-user/:id', component: UpdateUserComponent },
   { path: 'product-add', component: ProductAddComponent },
