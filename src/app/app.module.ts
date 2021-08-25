@@ -14,6 +14,10 @@ import { ReportsComponent } from './reports/reports.component';
 import { UsersComponent } from './users/users.component';
 import { ProductComponent } from './product/product.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { FormsModule } from '@angular/forms';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +30,16 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ReportsComponent,
     UsersComponent,
     ProductComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    CheckoutComponent,
+    AddUserComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [DashboardComponent]

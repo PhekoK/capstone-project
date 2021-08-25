@@ -1,1 +1,58 @@
-<p>users works!</p>
+<header id="header">
+    <nav>
+        <div class="container">
+            <div class="text-center">
+                <a href="/" class="nav-brand text-dark">User Management</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--Main Content-->
+<main id="main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <a routerLink="/add-user" class="border-shadow btn btn-outline-info">
+                <span class="text-gradient">New User <i class="fas fa-user"></i> </span>
+            </a>
+        </div>
+
+        <!--FORM HANDLER-->
+        <form action="/" method="POST">
+           <table class="table table-striped">
+               <thead>
+                   <tr>
+                       <th>#</th>
+                       <th>First Name</th>
+                       <th>Last Name</th>
+                       <th>Date of Birth</th>
+                       <th>Phone Number</th>
+                       <th>Email</th>
+                       <th>Password</th>
+                       <th>Action</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr *ngFor="let user of usersList; let i = index">
+                       <td>{{i+1}}</td>
+                       <td>{{user.firstName}}</td>
+                       <td>{{user.lastName}}</td>
+                       <td>{{user.dob}}</td>
+                       <td>{{user.phoneNumber}}</td>
+                       <td>{{user.email}}</td>
+                       <td>{{user.password}}</td>
+                       <td>
+                        <a class="btn btn-outline-info update">
+                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                        </a> &nbsp;
+                        <a class="btn btn-outline-danger delete">
+                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                        </a>
+                       </td>
+                   </tr>
+
+               </tbody>
+           </table>
+        </form>
+    </div>
+</main>

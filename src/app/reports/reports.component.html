@@ -1,1 +1,66 @@
-<p>reports works!</p>
+<header id="header">
+    <nav>
+        <div class="container">
+            <div class="text-center">
+                <a href="/" class="nav-brand text-dark">Stock Management</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--Main Content-->
+<main id="main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <a class="border-shadow btn btn-outline-info">
+                <span class="text-gradient">Add New Stock <i class="fas fa-carrot"></i> </span>
+            </a>
+        </div>
+
+        <!--FORM HANDLER-->
+        <form action="/" method="POST">
+           <table class="table ">
+               <thead>
+                   <tr>
+                       <th>#</th>
+                       <th>Image</th>
+                       <th>Product Name</th>
+                       <th>Price</th>
+                       <th>Availability</th>
+                       <th>Quantity</th>
+                       <th>Brand</th>
+                       <th>Size</th>
+                       <th>Category</th>
+                       <th>Stock Keeping Unit (SKU)</th>
+                       <th>Action</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr *ngFor="let item of items; let i = index">
+                       <td>{{i+1}}</td>
+                       <td>
+                           <img src="{{item.image}}" alt="image" style="width: 100px; height: 80x;">
+                       </td>
+                       <td>{{item.name}}</td>
+                       <td>{{item.price}}</td>
+                       <td>{{item.availability}}</td>
+                       <td>{{item.quantity}}</td>
+                       <td>{{item.brand}}</td>
+                       <td>{{item.size}}</td>
+                       <td>{{item.category}}</td>
+                       <td>{{item.SKU}}</td>
+                       <td>
+                        <a class="btn btn-outline-info update">
+                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                        </a> 
+                        <a class="btn btn-outline-danger delete">
+                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                        </a>
+                       </td>
+                   </tr>
+
+               </tbody>
+           </table>
+        </form>
+    </div>
+</main>
