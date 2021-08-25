@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { 
     path: 'admin-dashboard', component: AdminDashboardComponent, children: [
-         { path: '', redirectTo: 'reports', pathMatch: 'full' },
+         { path: '', redirectTo: 'users', pathMatch: 'full' },
          { path: 'users', component: UsersComponent },
          { path: 'reports', component: ReportsComponent }
      ]

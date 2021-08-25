@@ -1,5 +1,5 @@
 export class Product {
-    _id: number;
+    _id: string;
     name: string;
     price: number;
     availability: string; //In Stock or Out-Of-Stock

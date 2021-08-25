@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../models/product.model';
 import { ProductService } from '../services/product.service';
 
@@ -14,12 +15,15 @@ export class ReportsComponent implements OnInit {
 
   product: Product = new Product();
 
-  constructor( private _productService: ProductService ) { }
+  id: any;
+
+  constructor( private _productService: ProductService ,
+          private _router: Router ) { }
 
   ngOnInit(): void {
 
     this._productService.getProducts().subscribe(res => {
-      this.items = res
+      this.items = res;
     }, (err) => { console.log(err); })
   }
 

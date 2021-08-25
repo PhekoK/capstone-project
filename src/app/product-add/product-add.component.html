@@ -1,1 +1,84 @@
-<p>product-add works!</p>
+<header id="header">
+    <nav>
+        <div class="container">
+            <div class="text-center">
+                <a routerLink="/admin-dashboard/reports" class="nav-brand text-dark">Add New Product</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--Content here-->
+
+<div class="container">
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a routerLink="/admin-dashboard/reports" ><i class="fas fa-angle-double-left"></i> All Products</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark" >New Item Form</h2>
+                <span class="text-success">Use the below form to add new item in product list</span>
+            </div>
+    
+            <br>
+            <!--Add new product form-->
+            <form name="form" #prodForm="ngForm" (ngSubmit)="prodForm.form.valid && addProduct()" novalidate id="add_user">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" class="text-dark" >Product Name</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="name" #name="ngModel" [(ngModel)]="product.name" placeholder="Example: Dog Food" />
+                    </div>
+                    <div class="form-group">
+                        <label for="brand" class="text-dark">Product Brand</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="brand" #brand="ngModel" [(ngModel)]="product.brand" placeholder="Example: Brand Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="price" class="text-dark" >Product Price</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="price" #price="ngModel" [(ngModel)]="product.price" placeholder="5" />
+                    </div>
+                    <div class="form-group">
+                        <label for="availability" class="text-dark">Availability</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="availability" #availability="ngModel" [(ngModel)]="product.availability" placeholder="In Stock / Out Of Stock" />
+                    </div>
+                    <div class="form-group">
+                        <label for="size" class="text-dark" >Product Size</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="size" #size="ngModel" [(ngModel)]="product.size" placeholder="Example: 1Kg" />
+                    </div>
+                    <div class="form-group">
+                        <label for="category" class="text-dark">Under which category?</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="category" #category="ngModel" [(ngModel)]="product.category" placeholder="Example: Combos, Special, Bulk" />
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity" class="text-dark" >Quantity</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="quantity" #quantity="ngModel" [(ngModel)]="product.quantity" placeholder="80 " />
+                    </div>
+                    <div class="form-group">
+                        <label for="SKU" class="text-dark" >Stock Keeping Unit(SKU)</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="SKU" #SKU="ngModel" [(ngModel)]="product.SKU" placeholder="Example: NRU..... (5 digits) " />
+                    </div>
+                    <div class="form-group">
+                        <label for="image" class="text-dark">Upload Product Image : </label>
+                        <input type="hidden" name="id" value="">
+                        <input type="file" accept="image/*" name="image" #image="ngModel" [(ngModel)]="product.image" placeholder=".JPEG, .PNG, .JPG " />
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-light update">Add</button>
+                    </div>
+    
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
