@@ -26,4 +26,9 @@ export class UserService {
   getUserById(id: any): Observable<User> {
     return this._httpClient.get<User>('http://localhost:3000/users/' + id)
   }
+
+  deleteCurrentUser(id: any): Observable<User> {
+    return this._httpClient.delete<User>('http://localhost:3000/users/' + id);
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../models/user';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,9 +11,22 @@ import { UserService } from '../services/user.service';
 })
 export class AddUserComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User();
+
+  constructor( private _US: UserService , 
+         private _router: Router ) { }
 
   ngOnInit(): void {
+  }
+
+  addUser() {
+    this._US.registerUser(this.user)
+    .subscribe(result => {
+      console.log('New User Added SUccessfully')
+      this._router.navigate(['/admin-dashboard/users']);
+    } , (error) => {
+      console.log(error);
+    })
   }
 
 }

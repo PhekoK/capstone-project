@@ -10,58 +10,60 @@
 
 <!--Content here-->
 
-<main id="site-main">
-    <div class="container">
-        <div class="box-nav d-flex justify-between">
-            <div class="filter">
-                <a routerLink="/admin-dashboard/users"><i class="fas fa-angle-double-left"></i> All Users</a>
+<div class="container">
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a routerLink="/admin-dashboard/users"><i class="fas fa-angle-double-left"></i> All Users</a>
+                </div>
             </div>
-        </div>
-        <div class="form-title text-center">
-            <h2 class="text-dark">New User</h2>
-            <span class="text-success">Use the below form to create a new account</span>
-        </div>
-
-        <br>
-        <!--Add user form-->
-        <form action="" id="add_user">
-            <div class="new_user">
-                <div class="form-group">
-                    <label for="firstName" class="text-light">First Name</label>
-                    <input type="hidden" name="id" value="">
-                    <input type="text" name="name" value="" placeholder="Karabo">
-                </div>
-                <div class="form-group">
-                    <label for="lastName" class="text-light">Last Name</label>
-                    <input type="hidden" name="id" value="">
-                    <input type="text" name="lastName" value="" placeholder="Pheko">
-                </div>
-                <div class="form-group">
-                    <label for="dob" class="text-light">Date of Birth</label>
-                    <input type="date" name="dob" value="" placeholder="19-09-1999">
-                </div>
-                <div class="form-group">
-                    <label for="phoneNumber" class="text-light">Phone Number</label>
-                    <input type="text" name="phoneNumber" value="" placeholder="0119887605">
-                </div>
-                <div class="form-group">
-                    <label for="email" class="text-light">Email Address</label>
-                    <input type="email" name="email" value="" placeholder="example@gmail.com">
-                </div>
-                <div class="form-group">
-                    <label for="password" class="text-light">Password</label>
-                    <input type="password" name="passoword" value="" placeholder="********">
-                </div>
-                <div class="form-group">
-                    <label for="confirmPassword" class="text-light">Confirm Password</label>
-                    <input type="password" name="confirmPassword" value="" placeholder="Same as above">
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn text-dark update">Save</button>
-                </div>
-
+            <div class="form-title text-center">
+                <h2 class="text-dark" >New User</h2>
+                <span class="text-success">Use the below form to create a new account</span>
             </div>
-        </form>
-    </div>
-</main>
+    
+            <br>
+            <!--Add user form-->
+            <form name="form" #userForm="ngForm" (ngSubmit)="userForm.form.valid && addUser()" novalidate id="add_user">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="firstName" class="text-dark" >First Name</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="user.firstName" placeholder="User Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="text-dark">Last Name</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="user.lastName" placeholder="User Last Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="dob" class="text-dark">Date of Birth</label>
+                        <input type="date" name="dob" #dob="ngModel" [(ngModel)]="user.dob" placeholder="19-09-1999">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber" class="text-light">Phone Number</label>
+                        <input type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="user.phoneNumber" placeholder="0119887605" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="text-light">Email Address</label>
+                        <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" placeholder="example@gmail.com" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="text-light">Password</label>
+                        <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" placeholder="********" />
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword" class="text-light">Confirm Password</label>
+                        <input type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="user.confirmPassword" placeholder="Same as above" />
+                    </div>
+    
+                    <div class="form-group">
+                        <button type="submit" class="btn text-light update">Save</button>
+                    </div>
+    
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
