@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Product } from '../models/product.model';
 import { ProductService } from '../services/product.service';
 
 @Component({
-  selector: 'app-reports',
-  templateUrl: './reports.component.html',
-  styleUrls: ['./reports.component.css'],
-  providers: [ProductService]
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
 })
-export class ReportsComponent implements OnInit {
+export class ProductsComponent implements OnInit {
 
   items: Product[] = [];
 
@@ -17,11 +15,9 @@ export class ReportsComponent implements OnInit {
 
   id: any;
 
-  constructor( private _productService: ProductService ,
-          private _router: Router ) { }
+  constructor( private _productService: ProductService ) { }
 
   ngOnInit(): void {
-
     this._productService.getProducts().subscribe(res => {
       this.items = res;
     }, (err) => { console.log(err); })

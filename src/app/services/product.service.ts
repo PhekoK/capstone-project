@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 import { map } from 'rxjs/operators';
 
@@ -10,6 +10,9 @@ import { map } from 'rxjs/operators';
 export class ProductService {
 
   _id: string;
+
+  public wishList : any =[];
+  public productList = new BehaviorSubject<any>([]);
 
   constructor( private _http: HttpClient ) { }
 
@@ -31,5 +34,20 @@ export class ProductService {
 
   deleteProduct(id: any): Observable<Product> {
     return this._http.delete<Product>(`http://localhost:3000/products/${id}`);
+  }
+
+  addTowishlist(product : any){
+    this.wishList.push(product);
+    this.wishList.next(this.wishList);
+    console.log(this.wishList);
+  }
+
+  removeFromwishList(product: any){
+    this.wishList.map((a:any, index:any)=>{
+      if(product.id=== a.id){
+        this.wishList.splice(index,1);
+      }
+    })
+    this.productList.next(this.wishList);
   }
 }

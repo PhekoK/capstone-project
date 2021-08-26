@@ -14,7 +14,8 @@ export class ProductComponent implements OnInit {
   loggedIn: boolean = false;
 
   products: Product[] = [];
-  public totalItem: number = 0;
+  public totalItem: number = 0
+  public wishlist: number = 0;
 
   constructor( private _productService: ProductService, private _cartService: CartService,
       private _auth: AuthService ) { }
@@ -32,6 +33,12 @@ export class ProductComponent implements OnInit {
       this.totalItem = res.length;
     })
 
+
+    this._cartService.getWishlist()
+    .subscribe(res => {
+      this.wishlist = res.length;
+    })
+
     this._productService.getProducts().subscribe(result => {
       this.products = result;
       //this.totalItem = result.length;
@@ -42,6 +49,11 @@ export class ProductComponent implements OnInit {
     }, (error) => {
       console.log(error);
     })
+  }
+
+  addtoWishlist(item: any){
+    this._productService.addTowishlist(item);
+    alert('wishlisted');
   }
 
   addtoCart(product: any) {

@@ -6,19 +6,25 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CartService {
 
-  public cartItemList : any =[]
+  public cartItemList : any =[];
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
+  public wishItems = new BehaviorSubject<any>([]);
 
   constructor() { }
   getProducts(){
     return this.productList.asObservable();
   }
 
+  getWishlist() {
+    return this.wishItems.asObservable();
+  }
+
   setProduct(product : any){
     this.cartItemList.push(...product);
     this.productList.next(product);
   }
+
   addtoCart(product : any){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);

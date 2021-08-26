@@ -10,7 +10,6 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { ReportsComponent } from './reports/reports.component';
 import { UsersComponent } from './users/users.component';
 import { ProductComponent } from './product/product.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
@@ -20,8 +19,10 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ProductAddComponent } from './product-add/product-add.component';
-import { ProductUpdateComponent } from './product-update/product-update.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,6 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     LoginComponent,
     PageNotFoundComponent,
     AdminDashboardComponent,
-    ReportsComponent,
     UsersComponent,
     ProductComponent,
     ShoppingCartComponent,
@@ -40,8 +40,10 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     InvoiceComponent,
     UpdateUserComponent,
     ProductAddComponent,
-    ProductUpdateComponent,
-    WishlistComponent
+    WishlistComponent,
+    ProductDetailComponent,
+    UpdateProductComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

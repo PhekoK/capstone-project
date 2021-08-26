@@ -7,12 +7,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductAddComponent } from './product-add/product-add.component';
-import { ProductUpdateComponent } from './product-update/product-update.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductComponent } from './product/product.component';
+import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
-import { ReportsComponent } from './reports/reports.component';
 import { AuthService } from './services/auth.service';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UsersComponent } from './users/users.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
@@ -26,7 +27,7 @@ const routes: Routes = [
     path: 'admin-dashboard', component: AdminDashboardComponent, children: [
          { path: '', redirectTo: 'users', pathMatch: 'full' },
          { path: 'users', component: UsersComponent },
-         { path: 'reports', component: ReportsComponent }
+         { path: 'products', component: ProductsComponent }
      ]
   },
   { path: 'product', component: ProductComponent },
@@ -36,8 +37,9 @@ const routes: Routes = [
   { path: 'add-user', component: AddUserComponent },
   { path: 'update-user/:id', component: UpdateUserComponent },
   { path: 'product-add', component: ProductAddComponent },
-  { path: 'product-update/:id', component: ProductUpdateComponent },
   { path: 'wishlist', component: WishlistComponent },
+  { path: 'product-detail/:id', component: ProductDetailComponent },
+  { path: 'update-product/:id', component: UpdateProductComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 
