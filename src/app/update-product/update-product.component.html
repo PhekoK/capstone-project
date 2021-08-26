@@ -3,7 +3,7 @@
     <nav>
         <div class="container">
             <div class="text-center">
-                <a routerLink="/admin-dashboard/reports" class="nav-brand text-dark">Add New Product</a>
+                <a routerLink="/admin-dashboard/reports" class="nav-brand text-dark">Update Existing Product</a>
             </div>
         </div>
     </nav>
@@ -16,12 +16,12 @@
         <div class="container">
             <div class="box-nav d-flex justify-between">
                 <div class="filter">
-                    <a routerLink="/admin-dashboard/products" ><i class="fas fa-angle-double-left"></i> All Products</a>
+                    <a (click)="goBack()" class="btn btn-outline-info" ><i class="fas fa-angle-double-left">Back</i></a>
                 </div>
             </div>
             <div class="form-title text-center">
-                <h2 class="text-dark" >New Item Form</h2>
-                <span class="text-success">Use the below form to add new item in product list</span>
+                <h2 class="text-dark" >Update Product Details</h2>
+                <span class="text-success">Use the below form to update product in list</span>
             </div>
     
             <br>
@@ -75,7 +75,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn text-light update">Add</button>
+                        <button type="submit" (click)="updateProduct()" class="btn text-light update">Update</button>
                     </div>
     
                 </div>

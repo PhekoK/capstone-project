@@ -1,1 +1,113 @@
-<p>product-detail works!</p>
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- Topbar Search -->
+    <form
+        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+
+    <form action="">
+        
+    <a class="btn btn-outline-dark" routerLink="/shopping-cart"> <i class="fas fa-shopping-basket "></i>&nbsp;Cart
+
+        <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+    </a> &nbsp;
+    </form> &nbsp;
+    <form action="">
+         <i class="nav-item me-1 bg-dark"></i>
+        &nbsp; <a class="btn btn-outline-dark" routerLink="/wishlist"> <i class="fas fa-heart bg-red"></i> &nbsp;Wish List
+
+        <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+    </a>
+    </form>
+
+    
+
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+
+        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+        <li class="nav-item dropdown no-arrow d-sm-none">
+            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+            </a>
+            <!-- Dropdown - Messages -->
+        </li>
+
+        <div class="topbar-divider d-none d-sm-block"></div>
+
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">USER</span>
+                <img class="img-profile rounded-circle"
+                    src="./assets/images/undraw_profile.svg">
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown">
+                <a class="dropdown-item" routerLink='/login'>
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Login
+                </a>
+                <a class="dropdown-item" routerLink="/register">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Register
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"  data-toggle="modal" data-target="#logoutModal" >
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                </a>
+            </div>
+        </li>
+
+    </ul>
+    
+
+</nav>
+
+<button class="btn btn-dark" (click)="goBack()">Go Back</button>
+
+<!-- Product section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{product.image}}" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1">SKU: {{product.SKU}}</div>
+                <h1 class="display-5 fw-bolder">{{product.name}}</h1>
+                <div class="fs-5 mb-5">
+                   <!--  <span class="text-decoration-line-through">R45</span> -->
+                    <span>R{{product.price}}</span>
+                </div>
+                <p class="lead">
+                    <span class="text-decoration"><b>{{product.availability}}</b></span> <br>
+                    <span class="text-decoration">{{product.category}}</span>
+                </p>
+                <div class="d-flex">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
@@ -22,9 +23,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'product', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'admin-login', component: AdminLoginComponent },
   { path: 'register', component: RegisterComponent},
   { 
-    path: 'admin-dashboard', component: AdminDashboardComponent, children: [
+    path: 'admin-dashboard', component: AdminDashboardComponent , canActivate: [AuthService] , children: [
          { path: '', redirectTo: 'users', pathMatch: 'full' },
          { path: 'users', component: UsersComponent },
          { path: 'products', component: ProductsComponent }

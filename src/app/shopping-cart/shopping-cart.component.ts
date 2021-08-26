@@ -15,9 +15,20 @@ export class ShoppingCartComponent implements OnInit {
   public products : any = [];
   public grandTotal !: number;
 
+  loggedIn: boolean = false;
+
+  //products: Product[] = [];
+  public totalItem: number = 0
+  public wishlist: number = 0;
+
   constructor( private cartService: CartService ) { }
 
   ngOnInit(): void {
+
+    this.cartService.getProducts()
+    .subscribe(res => {
+      this.totalItem = res.length;
+    })
     
     this.cartService.getProducts()
     .subscribe(res=>{
