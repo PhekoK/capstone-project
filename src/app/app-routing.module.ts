@@ -15,6 +15,7 @@ import { AuthService } from './services/auth.service';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UsersComponent } from './users/users.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'product', pathMatch: 'full'},
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'update-user/:id', component: UpdateUserComponent },
   { path: 'product-add', component: ProductAddComponent },
   { path: 'product-update/:id', component: ProductUpdateComponent },
+  { path: 'wishlist', component: WishlistComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 

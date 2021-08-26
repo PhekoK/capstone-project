@@ -21,6 +21,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
     InvoiceComponent,
     UpdateUserComponent,
     ProductAddComponent,
-    ProductUpdateComponent
+    ProductUpdateComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

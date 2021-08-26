@@ -9,19 +9,16 @@ import { map } from 'rxjs/operators';
 })
 export class ProductService {
 
-  id: any;
+  _id: string;
 
   constructor( private _http: HttpClient ) { }
 
   getProducts(): Observable<Product[]> {
-    return this._http.get<Product[]>("http://localhost:3000/products")
-    .pipe(map((res: any) => {
-      return res;
-    }))
+    return this._http.get<Product[]>("http://localhost:3000/products");
   }
 
   getProductById(id: any): Observable<Product> {
-    return this._http.get<Product>(`http://localhost:3000/products/` + this.id)
+    return this._http.get<Product>('http://localhost:3000/products/' + id)
   }
 
   addNewProduct(product: Product): Observable<Product> {
