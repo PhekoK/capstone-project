@@ -20,9 +20,14 @@ export class CartService {
     return this.wishItems.asObservable();
   }
 
+  saveToLocalStorage() {
+    localStorage.setItem('cartItemList', JSON.stringify(this.cartItemList));
+  }
+
   setProduct(product : any){
     this.cartItemList.push(...product);
     this.productList.next(product);
+    this.saveToLocalStorage();
   }
 
   addtoCart(product : any){

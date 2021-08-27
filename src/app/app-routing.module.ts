@@ -5,6 +5,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductAddComponent } from './product-add/product-add.component';
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'update-user/:id', component: UpdateUserComponent },
   { path: 'product-add', component: ProductAddComponent },
   { path: 'wishlist', component: WishlistComponent },
+  { path: 'invoice', component: InvoiceComponent},
   { path: 'product-detail/:id', component: ProductDetailComponent },
   { path: 'update-product/:id', component: UpdateProductComponent },
   { path: '**', component: PageNotFoundComponent}
