@@ -52,7 +52,7 @@ export class ProductComponent implements OnInit {
   }
 
   addtoWishlist(item: any){
-    this._productService.addTowishlist(item);
+    this._cartService.addTowishlist(item);
     alert('wishlisted');
   }
 

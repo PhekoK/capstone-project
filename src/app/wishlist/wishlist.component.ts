@@ -8,17 +8,21 @@ import { CartService } from '../services/cart.service';
 })
 export class WishlistComponent implements OnInit {
 
+  public products : any = [];
+  public grandTotal !: number;
+
+  loggedIn: boolean = false;
+
+  public totalItem: number = 0
+  public wishlist: number = 0;
+
   constructor( private _proService: CartService ) { }
 
   ngOnInit(): void {
-  }
 
-  removeFromWishList(item: any){
-    this._proService.removeCartItem(item);
-  }
-
-  removeWishListedItems(){
-    this._proService.removeAllCart();
+    this._proService.getProducts().subscribe(result => {
+      this.totalItem = result.length;
+    })
   }
 
 }

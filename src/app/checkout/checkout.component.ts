@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { BillingService } from '../services/billing.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -10,11 +12,35 @@ import { AuthService } from '../services/auth.service';
 export class CheckoutComponent implements OnInit {
 
   strikeCheckout: any = null;
+  
+  //total number of items in cart
+  public totalItem: number = 0
+
+  public products : any = [];
+  public info: any = [];
+  public grandTotal !: number;
 
   constructor(private _authGuardService: AuthService,
-    private _router: Router) { }
+    private _router: Router, private _cartService: CartService,
+       private _bs: BillingService ) { }
 
   ngOnInit(): void {
+
+    this._cartService.getProducts()
+    .subscribe(res => {
+      this.totalItem = res.length; 
+    })
+
+    this._cartService.getProducts()
+    .subscribe(res=>{
+      this.products = res;
+      this.grandTotal = this._cartService.getTotalPrice();
+    })
+
+    this._bs.getDetails().subscribe(result => {
+      this.info = result;
+    })
+
     if (!this._authGuardService.isLoggedIn()) {
       this._router.navigate(['/login']);
     }
@@ -34,7 +60,7 @@ export class CheckoutComponent implements OnInit {
     strikeCheckout.open({
       name: 'MakePayment',
       description: 'Payment widgets',
-      amount: 500 * 100
+      amount: this.grandTotal * 100
     });
     this._router.navigate(['/invoice']);
   }

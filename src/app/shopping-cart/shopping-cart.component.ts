@@ -29,6 +29,11 @@ export class ShoppingCartComponent implements OnInit {
     .subscribe(res => {
       this.totalItem = res.length;
     })
+
+    this.cartService.getWishlist()
+    .subscribe(res => {
+      this.wishlist = res.length;
+    })
     
     this.cartService.getProducts()
     .subscribe(res=>{

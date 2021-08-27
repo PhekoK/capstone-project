@@ -10,6 +10,7 @@ export class CartService {
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
   public wishItems = new BehaviorSubject<any>([]);
+  public wishList : any =[];
 
   constructor() { }
   getProducts(){
@@ -54,5 +55,20 @@ export class CartService {
   removeAllCart(){
     this.cartItemList = []
     this.productList.next(this.cartItemList);
+  }
+
+  addTowishlist(product : any){
+    this.wishList.push(product);
+    this.wishList.next(this.wishList);
+    console.log(this.wishList);
+  }
+
+  removeFromwishList(product: any){
+    this.wishList.map((a:any, index:any)=>{
+      if(product.id=== a.id){
+        this.wishList.splice(index,1);
+      }
+    })
+    this.productList.next(this.wishList);
   }
 }
