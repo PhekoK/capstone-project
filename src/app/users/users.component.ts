@@ -30,12 +30,15 @@ export class UsersComponent implements OnInit {
     })
   }
 
-  deleteUser() {
-    this._userService.deleteCurrentUser(this.user._id)
-    .subscribe(result => {
-      alert('User Deleted Successfully..!!');
+  deleteUser(id:any) {
+    this._userService.deleteCurrentUser(id).subscribe(result => {
+      console.log("User Deleted successfully!");
+      alert("User Deleted from User DB");
+      console.log(result);
       this._router.navigate(['/admin-dashboard/users']);
-    }, (error) => { console.log(error); })
+    }, (err) => {
+      console.log(err);
+    })
   }
 
 }

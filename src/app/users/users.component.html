@@ -45,7 +45,7 @@
                         <a class="btn btn-outline-info update" [routerLink]="['/update-user', user._id]">
                             <span class="text-gradient"><i class="fas fa-pencil-alt" ></i></span>
                         </a> &nbsp;
-                        <button class="btn btn-outline-danger delete" (click)="deleteUser()" >
+                        <button class="btn btn-outline-danger delete" (click)="deleteUser(user._id)" >
                             <span class="text-gradient"><i class="fas fa-times"></i></span>
                         </button>
                        </td>
