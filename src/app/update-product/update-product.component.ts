@@ -20,6 +20,10 @@ export class UpdateProductComponent implements OnInit {
            private _ar: ActivatedRoute ) { }
 
   ngOnInit(): void {
+    this.id = this._ar.snapshot.paramMap.get('id');
+    this._ps.getProductById(this.id).subscribe(res => {
+      this.product = res;
+    }, (error) => {console.log(error); })
     
   }
 
@@ -28,10 +32,10 @@ export class UpdateProductComponent implements OnInit {
   }
 
   updateProduct(){
-    this._ps.updateProduct(this.id).subscribe(res => {
-      this.product = res;
+    this._ps.updateProduct(this.product).subscribe(res => {
+      alert('Product Updated Success!!')
       this._router.navigate(['/admin-dashboard/products']);
-    })
+    }, (error) => {console.log(error); })
   }
 
 }
