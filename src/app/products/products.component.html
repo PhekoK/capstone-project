@@ -53,7 +53,7 @@
                         <a class="btn btn-outline-info update" [routerLink]="['/update-product', item._id]" >
                             <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
                         </a> 
-                        <a class="btn btn-outline-danger delete">
+                        <a class="btn btn-outline-danger delete" (click)="deleteProduct(item._id)">
                             <span class="text-gradient"><i class="fas fa-times"></i></span>
                         </a>
                        </td>
