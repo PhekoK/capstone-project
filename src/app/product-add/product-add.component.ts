@@ -20,10 +20,9 @@ export class ProductAddComponent implements OnInit {
   }
 
   addProduct(){
-    this._prodService.getProductById(this.product).subscribe(result => {
-      console.log("product added successfully");
-      alert('New Product Added');
-      this._router.navigate(['/admin-dashboard/reports']);
+    this._prodService.addNewProduct(this.product).subscribe(res => {
+      alert("Product Added Success!!");
+      this._router.navigate(['/admin-dashboard/products']);
     }, (err) => {
       console.log(err);
     })
