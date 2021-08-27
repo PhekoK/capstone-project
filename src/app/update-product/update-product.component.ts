@@ -28,7 +28,10 @@ export class UpdateProductComponent implements OnInit {
   }
 
   updateProduct(){
-
+    this._ps.updateProduct(this.id).subscribe(res => {
+      this.product = res;
+      this._router.navigate(['/admin-dashboard/products']);
+    })
   }
 
 }

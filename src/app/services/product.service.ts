@@ -29,7 +29,7 @@ export class ProductService {
   }
 
   updateProduct(product: Product) : Observable<Product> {
-    return this._http.put<Product>("http://localhost:3000/products/" + product._id, product);
+    return this._http.patch<Product>("http://localhost:3000/products/" + product._id, product);
   }
 
   deleteProduct(id: any): Observable<Product> {
