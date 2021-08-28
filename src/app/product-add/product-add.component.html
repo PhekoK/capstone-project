@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <label for="image" class="text-dark">Upload Product Image : </label>
                         <input type="hidden" name="id" value="">
-                        <input type="file" accept="image/*" name="image" #image="ngModel" [(ngModel)]="product.image" placeholder=".JPEG, .PNG, .JPG " />
+                        <input type="text" name="image" #image="ngModel" [(ngModel)]="product.image" placeholder="image link " />
                     </div>
 
                     <div class="form-group">
