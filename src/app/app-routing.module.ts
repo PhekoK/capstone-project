@@ -18,7 +18,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UsersComponent } from './users/users.component';
-import { WishlistComponent } from './wishlist/wishlist.component';
+import { WishListComponent } from './wish-list/wish-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'product', pathMatch: 'full'},
@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'add-user', component: AddUserComponent },
   { path: 'update-user/:id', component: UpdateUserComponent },
   { path: 'product-add', component: ProductAddComponent },
-  { path: 'wishlist', component: WishlistComponent },
+  { path: 'wish-list', component: WishListComponent },
   { path: 'invoice', component: InvoiceComponent , canActivate: [AuthService]},
   { path: 'product-detail/:id', component: ProductDetailComponent },
   { path: 'update-product/:id', component: UpdateProductComponent },

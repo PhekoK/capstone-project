@@ -19,11 +19,11 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ProductAddComponent } from './product-add/product-add.component';
-import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { ProductsComponent } from './products/products.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { WishListComponent } from './wish-list/wish-list.component';
 
 @NgModule({
   declarations: [
@@ -41,11 +41,11 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     InvoiceComponent,
     UpdateUserComponent,
     ProductAddComponent,
-    WishlistComponent,
     ProductDetailComponent,
     UpdateProductComponent,
     ProductsComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    WishListComponent
   ],
   imports: [
     BrowserModule,
