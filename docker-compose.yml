@@ -1,0 +1,22 @@
+version: '3.7'
+
+services: 
+    
+    mongo-db:
+       image: mongo
+       ports: 
+        - '27017:27017'
+    
+    server: 
+      build: .
+      image: phekokabo/server
+      ports: 
+        - '3000:3000'
+      links: 
+        - mongo-db
+    
+    client:
+      build: capstone-project
+      image: phekokabo/capstone-project
+      ports: 
+        - '80:80'
