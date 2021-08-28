@@ -36,18 +36,4 @@ export class ProductService {
     return this._http.delete<Product>(`http://localhost:3000/products/${id}`);
   }
 
-  addTowishlist(product : any){
-    this.wishList.push(product);
-    this.wishList.next(this.wishList);
-    console.log(this.wishList);
-  }
-
-  removeFromwishList(product: any){
-    this.wishList.map((a:any, index:any)=>{
-      if(product.id=== a.id){
-        this.wishList.splice(index,1);
-      }
-    })
-    this.productList.next(this.wishList);
-  }
 }
