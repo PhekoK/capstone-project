@@ -22,11 +22,7 @@ export class WishlistComponent implements OnInit {
     private _auth: AuthService ) { }
 
   ngOnInit(): void {
-    if(this._auth.isLoggedIn()) {
-      this.loggedIn = true;
-    } else {
-      this.loggedIn = false;
-    }
+    
 
     this._cs.getWishlist().subscribe(data => {
       this.wishlist = data.length;

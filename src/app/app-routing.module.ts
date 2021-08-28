@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'add-user', component: AddUserComponent },
   { path: 'update-user/:id', component: UpdateUserComponent },
   { path: 'product-add', component: ProductAddComponent },
-  { path: 'wishlist', component: WishlistComponent , canActivate: [AuthService] },
+  { path: 'wishlist', component: WishlistComponent },
   { path: 'invoice', component: InvoiceComponent , canActivate: [AuthService]},
   { path: 'product-detail/:id', component: ProductDetailComponent },
   { path: 'update-product/:id', component: UpdateProductComponent },

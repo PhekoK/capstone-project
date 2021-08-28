@@ -63,6 +63,7 @@ export class ProductComponent implements OnInit {
 
   addtoCart(product: any) {
     this._cartService.addtoCart(product);
+    
     alert('added to cart')
   }
 
