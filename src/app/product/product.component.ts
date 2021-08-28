@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../models/product.model';
 import { AuthService } from '../services/auth.service';
 import { CartService } from '../services/cart.service';
@@ -18,7 +19,7 @@ export class ProductComponent implements OnInit {
   public wishlist: number = 0;
 
   constructor( private _productService: ProductService, private _cartService: CartService,
-      private _auth: AuthService ) { }
+      private _auth: AuthService, private _router: Router ) { }
 
   ngOnInit(): void {
 
@@ -54,6 +55,10 @@ export class ProductComponent implements OnInit {
   addtoWishlist(item: any){
     this._cartService.addTowishlist(item);
     alert('wishlisted');
+  }
+
+  goToWishList() {
+    this._router.navigate(['/wishlist'])
   }
 
   addtoCart(product: any) {

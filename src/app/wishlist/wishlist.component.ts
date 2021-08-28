@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product.model';
+import { AuthService } from '../services/auth.service';
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -16,13 +18,20 @@ export class WishlistComponent implements OnInit {
   public totalItem: number = 0
   public wishlist: number = 0;
 
-  constructor( private _proService: CartService ) { }
+  constructor( private _cs: CartService, private _ps: Product,
+    private _auth: AuthService ) { }
 
   ngOnInit(): void {
+    if(this._auth.isLoggedIn()) {
+      this.loggedIn = true;
+    } else {
+      this.loggedIn = false;
+    }
 
-    this._proService.getProducts().subscribe(result => {
-      this.totalItem = result.length;
+    this._cs.getWishlist().subscribe(data => {
+      this.wishlist = data.length;
     })
+    
   }
 
 }

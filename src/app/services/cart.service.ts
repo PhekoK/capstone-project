@@ -37,6 +37,13 @@ export class CartService {
     this.getTotalPrice();
     console.log(this.cartItemList)
   }
+
+  addTowishlist(item : any){
+    this.wishList.push(item);
+    this.wishItems.next(this.wishList);
+    console.log(this.wishList);
+  }
+
   getTotalPrice() : number{
     let grandTotal = 0;
     this.cartItemList.map((a:any)=>{
@@ -57,11 +64,7 @@ export class CartService {
     this.productList.next(this.cartItemList);
   }
 
-  addTowishlist(product : any){
-    this.wishList.push(product);
-    this.wishList.next(this.wishList);
-    console.log(this.wishList);
-  }
+  
 
   removeFromwishList(product: any){
     this.wishList.map((a:any, index:any)=>{
