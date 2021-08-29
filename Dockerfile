@@ -1,20 +1,34 @@
-# Step 1
-FROM node:14.17.0-alpine as build-step
+# Stage 1
+# Create image based on the official Node 8 image from dockerhub
 
-WORKDIR /app
+FROM node:8.11.2-alpine as node
 
-COPY package*.json /app
+# Create a directory where our app will be placed
+RUN mkdir -p /usr/src/app
+
+# Change directory so that our commands run inside this new directory
+
+WORKDIR /usr/src/app
+
+# Copy dependency definitions
+
+COPY package*.json ./
+
+# Install dependecies
 
 RUN npm install
 
-COPY . /app
+# Get all the code needed to run the app
 
-RUN npm run build --prod
+COPY . .
 
-# Step 2
+# Run the angular in product
+#RUN npm run build
 
-FROM nginx:1.20.1
+# Stage 2
+FROM nginx:1.13.12-alpine
 
-COPY --from=build-step app/dist/capstone-project /usr/share/nginx/html
+#copy dist content to html nginx folder, config nginx to point in index.html
+COPY --from=node /usr/src/app/dist/capstone-project /usr/share/nginx/html
 
-EXPOSE 80:80
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
